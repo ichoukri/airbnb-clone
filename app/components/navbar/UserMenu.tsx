@@ -4,8 +4,10 @@ import { useState, useCallback } from 'react'
 import { BsList } from 'react-icons/bs'
 import Avatar from '../Avatar'
 import MenuItem from './MenuItem';
+import useRegisterModal from '@/app/hooks/useRegisterModal';
 
 const UserMenu = () => {
+    const registerModal = useRegisterModal()
     const [showMenu, setShowMenu] = useState(false)
     const toggleMenu = useCallback(() => {
         setShowMenu((prev) => !prev)
@@ -39,7 +41,7 @@ const UserMenu = () => {
                         <div className='flex flex-col cursor-pointer '>
                             <>
                                 <MenuItem onClick={() => {}} label='Login'/>
-                                <MenuItem onClick={() => {}} label='Sign up'/>
+                                <MenuItem onClick={registerModal.onOpen} label='Sign up'/>
                             </>
                         </div>
                     </div>
