@@ -37,7 +37,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 >
                     <BsList />
                     <div className='hidden md:block'>
-                        <Avatar />
+                        <Avatar url={currentUser?.image}/>
                     </div>
                 </div>
             </div>

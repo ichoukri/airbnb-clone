@@ -22,13 +22,14 @@ export default async function RootLayout({
 }) {
 
   const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <ToasterProvider />
         <RegisterModal />
         <LoginModal />
-        <NavBar currentUser={currentUser}/>
+        <NavBar currentUser={currentUser} />
         {children}
       </body>
     </html>
